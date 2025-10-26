@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Adrien Gosset - Portfolio | Développeur SCADA & Systèmes Industriels</title>
+    <meta name="description" content="Portfolio d'Adrien Gosset, étudiant en développement logiciel à Epitech, spécialisé en systèmes SCADA, OPC-UA et solutions industrielles.">
+    <meta name="keywords" content="Adrien Gosset, développement SCADA, LX SCADA, OPC-UA, Epitech, portfolio développeur, systèmes industriels, Smart Grid">
+    <meta name="author" content="Adrien Gosset">
+    <meta name="robots" content="index, follow">
+    
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/config.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Adrien Gosset</h1>
+            <p class="hero-subtitle">
+                Étudiant en pré-MSC à Epitech, passionné par le développement logiciel et les nouvelles technologies. 
+                Je crée des solutions innovantes pour des projets concrets ayant du sens.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">Découvrir mes projets</a>
+                <a href="#contact" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Compétences & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Développement SCADA</h3>
+                    <p>LX SCADA, Graphworx, S4TH - Création de synoptiques interactifs et systèmes de supervision</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Protocoles Industriels</h3>
+                    <p>OPC-UA, LACBUS, communication série RS232 - Intégration de systèmes complexes</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Smart Grid & IoT</h3>
+                    <p>Gestion de réseaux intelligents, simulations énergétiques, solutions eau & énergie</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Outils Métiers</h3>
+                    <p>MyCRM, Price fx, Softools - Dimensionnement et chiffrage de solutions techniques</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Projets & Missions</h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="scada">SCADA</button>
+                <button class="filter-btn" data-filter="demo">Démo</button>
+                <button class="filter-btn" data-filter="client">Client</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="demo scada" onclick="openProject('hvac')">
+                    <div class="project-content">
+                        <h3 class="project-title">Démo HVAC (CVC)</h3>
+                        <p class="project-desc">
+                            Création de synoptiques interactifs sur LX SCADA pour présenter le fonctionnement du système HVAC lors du salon IBS 2024.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">LX SCADA</span>
+                            <span class="tag">Graphworx</span>
+                            <span class="tag">S4TH</span>
+                            <span class="tag">OPC-UA</span>
+                        </div>
+                        <div class="project-objective">
+                            <strong>Objectif :</strong> Présenter des vues en conditions réelles, navigables et modifiables par les commerciaux.
+                        </div>
+                        <button class="btn-detail">En savoir plus →</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="demo scada" onclick="openProject('smartgrid')">
+                    <div class="project-content">
+                        <h3 class="project-title">Démo Smart Grid</h3>
+                        <p class="project-desc">
+                            Développement d'une simulation pour visualiser la production et la consommation d'un parc éolien sur LX SCADA.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">LX SCADA</span>
+                            <span class="tag">Graphworx</span>
+                            <span class="tag">OPC-UA</span>
+                            <span class="tag">Simulations</span>
+                        </div>
+                        <div class="project-objective">
+                            <strong>Objectif :</strong> Montrer les possibilités de LX SCADA pour le contrôle et la gestion d'un réseau électrique intelligent.
+                        </div>
+                        <button class="btn-detail">En savoir plus →</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="client" onclick="openProject('chiffrage')">
+                    <div class="project-content">
+                        <h3 class="project-title">Chiffrage & Projets Clients</h3>
+                        <p class="project-desc">
+                            Utilisation de MyCRM et Price fx pour établir des devis précis et dimensionner les solutions Lacroix.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">MyCRM</span>
+                            <span class="tag">Price fx</span>
+                            <span class="tag">Dimensionnement</span>
+                        </div>
+                        <div class="project-objective">
+                            <strong>Objectif :</strong> Faciliter le dimensionnement et la vente de solutions pour le domaine de l'eau et de l'énergie.
+                        </div>
+                        <button class="btn-detail">En savoir plus →</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="client" onclick="openProject('migration')">
+                    <div class="project-content">
+                        <h3 class="project-title">Tutoriel Migration S500 → S4</h3>
+                        <p class="project-desc">
+                            Création d'un tutoriel vidéo pour expliquer le processus de migration des configurations S500 vers S4.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Softools</span>
+                            <span class="tag">S4 Tools</span>
+                            <span class="tag">Montage vidéo</span>
+                        </div>
+                        <div class="project-objective">
+                            <strong>Objectif :</strong> Former les clients à l'utilisation d'un nouvel outil de migration tout en assurant la continuité de service.
+                        </div>
+                        <button class="btn-detail">En savoir plus →</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="scada" onclick="openProject('moxa')">
+                    <div class="project-content">
+                        <h3 class="project-title">Communication Série Moxa-Radios</h3>
+                        <p class="project-desc">
+                            Tests de liaison série RS232 via radios Kenwood et convertisseurs Moxa MB3180, optimisation des paramètres RTS/CTS.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">PCWin2</span>
+                            <span class="tag">S500/S4</span>
+                            <span class="tag">Moxa MB3180</span>
+                            <span class="tag">LACBUS</span>
+                        </div>
+                        <div class="project-objective">
+                            <strong>Objectif :</strong> Vérifier la faisabilité de communication série fiable pour le transfert de données à distance.
+                        </div>
+                        <button class="btn-detail">En savoir plus →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Restons en contact</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">
+                    Vous avez un projet ou souhaitez simplement échanger ? N'hésitez pas à me contacter !
+                </p>
+                <div class="hero-cta">
+                    <a href="mailto:adrien.gosset@example.com" class="btn btn-primary">Envoyer un email</a>
+                    <a href="https://linkedin.com" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="projectModal" onclick="closeProject()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeProject()">×</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Adrien Gosset</p>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
