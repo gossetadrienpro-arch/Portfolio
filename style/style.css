@@ -171,14 +171,11 @@ nav {
 }
 
 .hero-cta {
-    display: flex;
-    justify-content: center;   /* centre horizontalement */
-    align-items: center;        /* aligne verticalement */
-    gap: 1rem;                  /* espace entre les boutons */
-    margin-top: 1.5rem;         /* ajuste l’espace au-dessus */
-    transform: translateX(-40px); /* décale vers la gauche */
+    display: inline-flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
 
 .btn {
     padding: 0.9rem 2rem;
