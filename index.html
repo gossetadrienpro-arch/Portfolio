@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Adrien Gosset - Portfolio | Développeur SCADA & Systèmes Industriels</title>
-    <meta name="description" content="Portfolio d'Adrien Gosset, étudiant en développement logiciel à Epitech, spécialisé en systèmes SCADA, OPC-UA et solutions industrielles.">
+    <meta name="description" content="Portfolio d'Adrien Gosset, étudiant en Master of Science à Epitech, spécialisé en systèmes SCADA, OPC-UA et solutions industrielles.">
     <meta name="keywords" content="Adrien Gosset, développement SCADA, LX SCADA, OPC-UA, Epitech, portfolio développeur, systèmes industriels, Smart Grid">
     <meta name="author" content="Adrien Gosset">
     <meta name="robots" content="index, follow">
@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#6366f1">
     <meta name="msapplication-TileColor" content="#6366f1">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- facultatif -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,8 +36,8 @@
         <div class="hero-content">
             <h1 class="hero-title">Adrien Gosset</h1>
             <p class="hero-subtitle">
-                Étudiant en pré-MSC à Epitech, passionné par le développement logiciel et les nouvelles technologies. 
-                Je crée des solutions innovantes pour des projets concrets ayant du sens.
+              Étudiant en pré-MSC à Epitech, passionné par les nouvelles technologies. 
+              Je m’intéresse aux systèmes embarqués et à la cybersécurité, et j’aspire à contribuer à des projets concrets pour développer mes compétences techniques.
             </p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary">Découvrir mes projets</a>
@@ -50,22 +50,60 @@
         <div class="container">
             <h2 class="section-title">Compétences & Technologies</h2>
             <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Languages informatiques</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Notions C/C++</li>
+                    </ul> 
+                </div>
+                <div class="skill-card">
+                    <h3>Outils/Environnements</h3>
+                    <ul><li>PowerShell</li> <li>WSL</li> <li>GitHub</li> <li>Arduino</li></ul>
+
+                </div>
+
+                  <div class="skill-card">
+                    <h3>Langages de programmation industriels</h3>
+                    <ul><li>Ladder</li> <li>Grafcet</li> <li>Structured Text</li> <li>Function Block Diagram</li></ul>
+                </div>
+
+                 <div class="skill-card">
+                    <h3>Protocoles Industriels</h3>
+                    <ul><li>OPC-UA</li> <li>LACBUS</li> <li>Modbus RTU  (Remote Terminal Unit)</li> <li>Modbus TCP/IP</li> <li>Intégration de systèmes complexes</li></ul>
+                </div>
+
                 <div class="skill-card">
                     <h3>Développement SCADA</h3>
-                    <p>LX SCADA, Graphworx, S4TH - Création de synoptiques interactifs et systèmes de supervision</p>
+                    <ul><li>LX SCADA</li><li>Graphworx64</li><li>Communication avec automates S4TH / S4W Sofrel</li><li>Création de synoptiques interactifs</li></ul>
                 </div>
-                <div class="skill-card">
-                    <h3>Protocoles Industriels</h3>
-                    <p>OPC-UA, LACBUS, communication série RS232 - Intégration de systèmes complexes</p>
-                </div>
+
                 <div class="skill-card">
                     <h3>Smart Grid & IoT</h3>
-                    <p>Gestion de réseaux intelligents, simulations énergétiques, solutions eau & énergie</p>
+                    <ul><li>Gestion de réseaux intelligents </li><li>Simulations énergétiques</li><li>Solutions eau & énergie</li></ul>
                 </div>
+
                 <div class="skill-card">
                     <h3>Outils Métiers</h3>
-                    <p>MyCRM, Price fx, Softools - Dimensionnement et chiffrage de solutions techniques</p>
+                    <ul><li>MyCRM</li> <li>Price fx</li> <li>Softools</li> <li>Dimensionnement et chiffrage de solutions techniques</li></ul>
                 </div>
+
+                <div class="skill-card">
+                    <h3>Logiciels</h3>
+                    <ul><li>WinRelais</li> <li>SEE Electrical</li> <li>Caneco BT/H</li> <li>AutoCAD</li> <li>Systèmes SCADA</li></ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Bureautique</h3>
+                    <ul><li>Pack Office</li> <li></li></ul>
+                </div>
+
             </div>
         </div>
     </section>
@@ -82,7 +120,10 @@
             </div>
 
             <div class="projects-grid">
+
+                <!-- 1. Démo HVAC -->
                 <div class="project-card" data-category="demo scada" onclick="openProject('hvac')">
+
                     <div class="project-content">
                         <h3 class="project-title">Démo HVAC (CVC)</h3>
                         <p class="project-desc">
@@ -97,11 +138,14 @@
                         <div class="project-objective">
                             <strong>Objectif :</strong> Présenter des vues en conditions réelles, navigables et modifiables par les commerciaux.
                         </div>
-                        <button class="btn-detail">En savoir plus →</button>
                     </div>
+
+                    <button class="btn-detail">En savoir plus →</button>
                 </div>
 
+                <!-- 2. Démo Smart Grid -->
                 <div class="project-card" data-category="demo scada" onclick="openProject('smartgrid')">
+
                     <div class="project-content">
                         <h3 class="project-title">Démo Smart Grid</h3>
                         <p class="project-desc">
@@ -116,11 +160,14 @@
                         <div class="project-objective">
                             <strong>Objectif :</strong> Montrer les possibilités de LX SCADA pour le contrôle et la gestion d'un réseau électrique intelligent.
                         </div>
-                        <button class="btn-detail">En savoir plus →</button>
                     </div>
+
+                    <button class="btn-detail">En savoir plus →</button>
                 </div>
-                
+
+                <!-- 3. Chiffrage projets clients -->
                 <div class="project-card" data-category="client" onclick="openProject('chiffrage')">
+
                     <div class="project-content">
                         <h3 class="project-title">Chiffrage & Projets Clients</h3>
                         <p class="project-desc">
@@ -134,11 +181,14 @@
                         <div class="project-objective">
                             <strong>Objectif :</strong> Faciliter le dimensionnement et la vente de solutions pour le domaine de l'eau et de l'énergie.
                         </div>
-                        <button class="btn-detail">En savoir plus →</button>
                     </div>
+
+                    <button class="btn-detail">En savoir plus →</button>
                 </div>
 
+                <!-- 4. Migration S500 → S4 -->
                 <div class="project-card" data-category="client" onclick="openProject('migration')">
+
                     <div class="project-content">
                         <h3 class="project-title">Tutoriel Migration S500 → S4</h3>
                         <p class="project-desc">
@@ -152,11 +202,14 @@
                         <div class="project-objective">
                             <strong>Objectif :</strong> Former les clients à l'utilisation d'un nouvel outil de migration tout en assurant la continuité de service.
                         </div>
-                        <button class="btn-detail">En savoir plus →</button>
                     </div>
+
+                    <button class="btn-detail">En savoir plus →</button>
                 </div>
 
+                <!-- 5. Communication série Moxa -->
                 <div class="project-card" data-category="scada" onclick="openProject('moxa')">
+
                     <div class="project-content">
                         <h3 class="project-title">Communication Série Moxa-Radios</h3>
                         <p class="project-desc">
@@ -171,9 +224,11 @@
                         <div class="project-objective">
                             <strong>Objectif :</strong> Vérifier la faisabilité de communication série fiable pour le transfert de données à distance.
                         </div>
-                        <button class="btn-detail">En savoir plus →</button>
                     </div>
+
+                    <button class="btn-detail">En savoir plus →</button>
                 </div>
+
             </div>
         </div>
     </section>

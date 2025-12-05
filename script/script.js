@@ -86,8 +86,10 @@ const projectsData = {
 
             <h3> Vues réalisées</h3>
             <ul>
-                <li><strong>Vue d'accueil Smart Grid</strong> : Vue générale du parc éolien</li>
-                <li><strong>Vue Panneaux de contrôles et mesures</strong> : Tableau de bord détaillé avec toutes les métriques</li>
+                <li><strong>Vue d'accueil Smart Grid</strong> : </li>
+                <li>Vue générale du parc éolien</li>
+                <li><strong>Vue Panneaux de contrôles et mesures</strong> : </li>
+                <li>Tableau de bord détaillé avec toutes les métriques</li>
                 <li>Simulation de production éolienne en temps réel</li>
                 <li>Gestion de la synchronisation réseau Enedis</li>
                 <li>Sélectivité des départs électriques</li>
@@ -285,10 +287,10 @@ const projectsData = {
             </ul>
             <p> Après ajustement des paramètres, les trames longues sont correctement transmises et reçues. <strong>Les échanges sont fonctionnels.</strong></p>
 
-            <h3 Test de charge - 4 sockets TCP en parallèle</h3>
-            <p><strong>Objectif :</strong> Évaluer les limites du Moxa</p>
+            <h3> Test de charge - 4 sockets TCP en parallèle</h3>
+            <p><strong> Objectif :</strong> Évaluer les limites du Moxa</p>
             <p>Le superviseur envoie des requêtes vers 4 automates "théoriques" (1 réel connecté).</p>
-            <p> <strong>Résultat :</strong> Comportement incohérent du Moxa MB3180 (confusion de trames, absence de réponse)</p>
+            <p> <strong> Résultat :</strong> Comportement incohérent du Moxa MB3180 (confusion de trames, absence de réponse)</p>
 
             <h3> Problème de stabilité au redémarrage</h3>
             <h4>Observation (21/05/2025)</h4>
