@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Adrien Gosset - Portfolio | Développeur SCADA & Systèmes Industriels</title>
-    <meta name="description" content="Portfolio d'Adrien Gosset, étudiant en Master of Science à Epitech, spécialisé en systèmes SCADA, OPC-UA et solutions industrielles.">
-    <meta name="keywords" content="Adrien Gosset, développement SCADA, LX SCADA, OPC-UA, Epitech, portfolio développeur, systèmes industriels, Smart Grid">
+    <title>Adrien Gosset - Portfolio | Automatisme, SCADA & Systèmes Industriels</title>
+    <meta name="description" content="Portfolio d'Adrien Gosset, étudiant en Master of Science à Epitech, spécialisé en automatisme, systèmes SCADA, IoT industriel et intégration GTB.">
+    <meta name="keywords" content="Adrien Gosset, automatisme, SCADA, LX SCADA, OPC-UA, BACnet, Modbus, LoRaWAN, IoT, GTB, Epitech, portfolio, systèmes industriels">
     <meta name="author" content="Adrien Gosset">
     <meta name="robots" content="index, follow">
-
     <meta name="theme-color" content="#6366f1">
-    <meta name="msapplication-TileColor" content="#6366f1">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,12 +17,158 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style/style.css">
+
+    <style>
+        /* ── Experience Timeline ── */
+        .experience-section {
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.6s ease backwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .timeline-dot {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            z-index: 1;
+            margin-top: 4px;
+        }
+
+        .timeline-dot.current {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-color: var(--accent-light);
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+
+        .timeline-card {
+            flex: 1;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-company {
+            font-size: 1.15rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timeline-dates {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .timeline-role {
+            font-size: 0.95rem;
+            color: var(--accent-light);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .timeline-bullets li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .timeline-bullets li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.9rem;
+        }
+
+        .timeline-tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            border-radius: 20px;
+            color: var(--accent-light);
+        }
+    </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
+                <li><a href="#experience">Expériences</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -32,12 +176,14 @@
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="hero-title">Adrien Gosset</h1>
-            <p class="hero-subtitle">
-              Étudiant en pré-MSC à Epitech, passionné par les nouvelles technologies. 
-              Je m’intéresse aux systèmes embarqués et à la cybersécurité, et j’aspire à contribuer à des projets concrets pour développer mes compétences techniques.
+                                                <p class="hero-subtitle">
+                Depuis mon Bac Pro, je travaille sur des installations industrielles réelles : datacenters, supervision CVC, intégration GTB hospitalière.
+                Ces environnements sont critiques, rarement sécurisés et de plus en plus exposés — c’est ce constat qui m’a orienté vers la cybersécurité OT/ICS.
+                Étudiant en MSc Cybersécurité &amp; Cloud à Epitech, je cherche une alternance pour transformer cette double culture en véritable expertise.
             </p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary">Découvrir mes projets</a>
@@ -46,89 +192,238 @@
         </div>
     </section>
 
-    <section class="section" id="skills">
+    <!-- EXPÉRIENCES -->
+    <section class="experience-section" id="experience">
         <div class="container">
-            <h2 class="section-title">Compétences & Technologies</h2>
-            <div class="skills-grid">
+            <h2 class="section-title">Expériences professionnelles</h2>
+            <div class="timeline">
 
-                <div class="skill-card">
-                    <h3>Languages informatiques</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                        <li>PHP</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Notions C/C++</li>
-                    </ul> 
-                </div>
-                <div class="skill-card">
-                    <h3>Outils/Environnements</h3>
-                    <ul><li>PowerShell</li> <li>WSL</li> <li>GitHub</li> <li>Arduino</li></ul>
-
-                </div>
-
-                  <div class="skill-card">
-                    <h3>Langages de programmation industriels</h3>
-                    <ul><li>Ladder</li> <li>Grafcet</li> <li>Structured Text</li> <li>Function Block Diagram</li></ul>
-                </div>
-
-                 <div class="skill-card">
-                    <h3>Protocoles Industriels</h3>
-                    <ul><li>OPC-UA</li> <li>LACBUS</li> <li>Modbus RTU  (Remote Terminal Unit)</li> <li>Modbus TCP/IP</li> <li>Intégration de systèmes complexes</li></ul>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Développement SCADA</h3>
-                    <ul><li>LX SCADA</li><li>Graphworx64</li><li>Communication avec automates S4TH / S4W Sofrel</li><li>Création de synoptiques interactifs</li></ul>
+                <!-- Ouisense -->
+                <div class="timeline-item">
+                    <div class="timeline-dot current">🏥</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-company">Ouisense</span>
+                            <span class="timeline-dates">Janv. 2026 → Aujourd'hui</span>
+                        </div>
+                        <div class="timeline-role">Alternant — Automatisme &amp; Supervision</div>
+                        <ul class="timeline-bullets">
+                            <li>Intégration GTB pour le domaine de la santé (centres hospitaliers, EHPAD)</li>
+                            <li>Installation et programmation de passerelles LoRaWAN</li>
+                            <li>Installation de capteurs pour chaufferies et sous-stations</li>
+                            <li>Implantation sur plan de matériel IoT (capteurs, passerelles, moteurs de vannes, émetteurs/récepteurs radio)</li>
+                            <li>Création et mise en place de tables Modbus</li>
+                            <li>Études sur la conversion de bits pour l'affichage des valeurs réelles Modbus</li>
+                            <li>Mise en place de documentations pour la mise en service d'automates BACnet</li>
+                            <li>Installation de matériel Thermozyklus</li>
+                            <li>Suivi de projet et gestion des coûts</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">BACnet</span>
+                            <span class="timeline-tag">LoRaWAN</span>
+                            <span class="timeline-tag">Modbus TCP/IP</span>
+                            <span class="timeline-tag">GTB</span>
+                            <span class="timeline-tag">IoT</span>
+                            <span class="timeline-tag">Thermozyklus</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Smart Grid & IoT</h3>
-                    <ul><li>Gestion de réseaux intelligents </li><li>Simulations énergétiques</li><li>Solutions eau & énergie</li></ul>
+                <!-- Lacroix Sofrel -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">⚙️</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-company">Lacroix Sofrel</span>
+                            <span class="timeline-dates">Sept. 2024 → Sept. 2025</span>
+                        </div>
+                        <div class="timeline-role">Technicien d'études technique</div>
+                        <ul class="timeline-bullets">
+                            <li>Accompagnement avant-vente : conseils techniques, dimensionnement et chiffrage de solutions de télégestion</li>
+                            <li>Développement de synoptiques LX SCADA : projet Smart Grid &amp; projet CVC HVAC (présenté au salon IBS)</li>
+                            <li>Création d'un tutoriel vidéo pour la migration de configurations S500 → S4 (Softools / S4 Tools)</li>
+                            <li>Essais de communication série RS-232 via radios Kenwood et convertisseur Moxa MB3180 (protocole LACBUS/Modbus RTU)</li>
+                            <li>Validation de la transmission de trames vers superviseur PCWIN2 / LX SCADA via TCP/IP</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">LX SCADA</span>
+                            <span class="timeline-tag">OPC-UA</span>
+                            <span class="timeline-tag">LACBUS</span>
+                            <span class="timeline-tag">Modbus RTU</span>
+                            <span class="timeline-tag">TCP/IP</span>
+                            <span class="timeline-tag">S4TH</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Outils Métiers</h3>
-                    <ul><li>MyCRM</li> <li>Price fx</li> <li>Softools</li> <li>Dimensionnement et chiffrage de solutions techniques</li></ul>
+                <!-- Dalkia -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🔧</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-company">Dalkia</span>
+                            <span class="timeline-dates">Juin 2023 → Sept. 2024</span>
+                        </div>
+                        <div class="timeline-role">Technicien d'exploitation multi technique</div>
+                        <ul class="timeline-bullets">
+                            <li>Supervision GTC</li>
+                            <li>Remplacement / dépannage de cartes électroniques sur installations CVC</li>
+                            <li>Maintenance corrective et préventive : production de froid et réseau d'eau</li>
+                            <li>Gestion et organisation des intervenants lors de maintenances et essais groupes électrogènes</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">GTC</span>
+                            <span class="timeline-tag">CVC</span>
+                            <span class="timeline-tag">Maintenance</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Logiciels</h3>
-                    <ul><li>WinRelais</li> <li>SEE Electrical</li> <li>Caneco BT/H</li> <li>AutoCAD</li> <li>Systèmes SCADA</li></ul>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Bureautique</h3>
-                    <ul><li>Pack Office</li> <li></li></ul>
+                <!-- Eneria CAT -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">⚡</div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-company">Eneria CAT</span>
+                            <span class="timeline-dates">Oct. 2021 → Sept. 2022</span>
+                        </div>
+                        <div class="timeline-role">Technicien itinérant — maintenance groupes électrogènes</div>
+                        <ul class="timeline-bullets">
+                            <li>Installation de groupes électrogènes pour des domaines variés (Datacenter principalement, hôpitaux)</li>
+                            <li>Dépannage sur site et interventions d'urgence</li>
+                            <li>Mise en service des groupes électrogènes</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">Groupes électrogènes</span>
+                            <span class="timeline-tag">Datacenter</span>
+                            <span class="timeline-tag">Mise en service</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- COMPÉTENCES -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Compétences &amp; Technologies</h2>
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Langages informatiques</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>Next.js</li>
+                        <li>Rust</li>
+                        <li>PHP</li>
+                        <li>HTML / CSS</li>
+                        <li>Notions C/C++</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Outils &amp; Environnements</h3>
+                    <ul>
+                        <li>GitHub</li>
+                        <li>PowerShell</li>
+                        <li>WSL</li>
+                        <li>Arduino</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Langages industriels</h3>
+                    <ul>
+                        <li>Ladder</li>
+                        <li>Grafcet</li>
+                        <li>Structured Text (ST)</li>
+                        <li>Function Block Diagram (FBD)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Protocoles industriels</h3>
+                    <ul>
+                        <li>OPC-UA</li>
+                        <li>BACnet</li>
+                        <li>Modbus RTU</li>
+                        <li>Modbus TCP/IP</li>
+                        <li>LACBUS</li>
+                        <li>LoRaWAN</li>
+                        <li>RS-232 / RS-485</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Développement SCADA</h3>
+                    <ul>
+                        <li>LX SCADA</li>
+                        <li>Graphworx64</li>
+                        <li>Communication avec automates S4TH / S4W Sofrel</li>
+                        <li>Création de synoptiques interactifs</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>GTB / IoT industriel</h3>
+                    <ul>
+                        <li>Intégration GTB santé (EHPAD, hôpitaux)</li>
+                        <li>Passerelles LoRaWAN</li>
+                        <li>Capteurs IoT (chaufferies, sous-stations)</li>
+                        <li>Tables Modbus et conversion de bits</li>
+                        <li>Matériel Thermozyklus</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Smart Grid &amp; Énergie</h3>
+                    <ul>
+                        <li>Gestion de réseaux intelligents</li>
+                        <li>Simulations énergétiques</li>
+                        <li>Solutions eau &amp; énergie</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Outils métiers</h3>
+                    <ul>
+                        <li>MyCRM / Price fx</li>
+                        <li>Softools / S4 Tools</li>
+                        <li>WinRelais</li>
+                        <li>SEE Electrical</li>
+                        <li>CANECO BT/H</li>
+                        <li>AutoCAD</li>
+                        <li>Pack Office</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS -->
     <section class="section" id="projects">
         <div class="container">
-            <h2 class="section-title">Projets & Missions</h2>
+            <h2 class="section-title">Projets &amp; Missions</h2>
             
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">Tous</button>
                 <button class="filter-btn" data-filter="scada">SCADA</button>
                 <button class="filter-btn" data-filter="demo">Démo</button>
                 <button class="filter-btn" data-filter="client">Client</button>
+                <button class="filter-btn" data-filter="cybersec">Cybersécurité</button>
             </div>
 
             <div class="projects-grid">
 
-                <!-- 1. Démo HVAC -->
                 <div class="project-card" data-category="demo scada" onclick="openProject('hvac')">
-
                     <div class="project-content">
                         <h3 class="project-title">Démo HVAC (CVC)</h3>
-                        <p class="project-desc">
-                            Création de synoptiques interactifs sur LX SCADA pour présenter le fonctionnement du système HVAC lors du salon IBS 2024.
-                        </p>
+                        <p class="project-desc">Création de synoptiques interactifs sur LX SCADA pour présenter le fonctionnement du système HVAC lors du salon IBS 2024.</p>
                         <div class="project-tags">
                             <span class="tag">LX SCADA</span>
                             <span class="tag">Graphworx</span>
@@ -139,18 +434,13 @@
                             <strong>Objectif :</strong> Présenter des vues en conditions réelles, navigables et modifiables par les commerciaux.
                         </div>
                     </div>
-
                     <button class="btn-detail">En savoir plus →</button>
                 </div>
 
-                <!-- 2. Démo Smart Grid -->
                 <div class="project-card" data-category="demo scada" onclick="openProject('smartgrid')">
-
                     <div class="project-content">
                         <h3 class="project-title">Démo Smart Grid</h3>
-                        <p class="project-desc">
-                            Développement d'une simulation pour visualiser la production et la consommation d'un parc éolien sur LX SCADA.
-                        </p>
+                        <p class="project-desc">Développement d'une simulation pour visualiser la production et la consommation d'un parc éolien sur LX SCADA.</p>
                         <div class="project-tags">
                             <span class="tag">LX SCADA</span>
                             <span class="tag">Graphworx</span>
@@ -161,18 +451,13 @@
                             <strong>Objectif :</strong> Montrer les possibilités de LX SCADA pour le contrôle et la gestion d'un réseau électrique intelligent.
                         </div>
                     </div>
-
                     <button class="btn-detail">En savoir plus →</button>
                 </div>
 
-                <!-- 3. Chiffrage projets clients -->
                 <div class="project-card" data-category="client" onclick="openProject('chiffrage')">
-
                     <div class="project-content">
-                        <h3 class="project-title">Chiffrage & Projets Clients</h3>
-                        <p class="project-desc">
-                            Utilisation de MyCRM et Price fx pour établir des devis précis et dimensionner les solutions Lacroix.
-                        </p>
+                        <h3 class="project-title">Chiffrage &amp; Projets Clients</h3>
+                        <p class="project-desc">Utilisation de MyCRM et Price fx pour établir des devis précis et dimensionner les solutions Lacroix.</p>
                         <br>
                         <div class="project-tags">
                             <span class="tag">MyCRM</span>
@@ -183,18 +468,13 @@
                             <strong>Objectif :</strong> Faciliter le dimensionnement et la vente de solutions pour le domaine de l'eau et de l'énergie.
                         </div>
                     </div>
-
                     <button class="btn-detail">En savoir plus →</button>
                 </div>
 
-                <!-- 4. Migration S500 → S4 -->
                 <div class="project-card" data-category="client" onclick="openProject('migration')">
-
                     <div class="project-content">
                         <h3 class="project-title">Tutoriel Migration S500 → S4</h3>
-                        <p class="project-desc">
-                            Création d'un tutoriel vidéo pour expliquer le processus de migration des configurations S500 vers S4.
-                        </p>
+                        <p class="project-desc">Création d'un tutoriel vidéo pour expliquer le processus de migration des configurations S500 vers S4.</p>
                         <div class="project-tags">
                             <span class="tag">Softools</span>
                             <span class="tag">S4 Tools</span>
@@ -204,18 +484,13 @@
                             <strong>Objectif :</strong> Former les clients à l'utilisation d'un nouvel outil de migration tout en assurant la continuité de service.
                         </div>
                     </div>
-
                     <button class="btn-detail">En savoir plus →</button>
                 </div>
 
-                <!-- 5. Communication série Moxa -->
                 <div class="project-card" data-category="scada" onclick="openProject('moxa')">
-
                     <div class="project-content">
                         <h3 class="project-title">Communication Série Moxa-Radios</h3>
-                        <p class="project-desc">
-                            Tests de liaison série RS232 via radios Kenwood et convertisseurs Moxa MB3180, optimisation des paramètres RTS/CTS.
-                        </p>
+                        <p class="project-desc">Tests de liaison série RS232 via radios Kenwood et convertisseurs Moxa MB3180, optimisation des paramètres RTS/CTS.</p>
                         <div class="project-tags">
                             <span class="tag">PCWin2</span>
                             <span class="tag">S500/S4</span>
@@ -226,7 +501,25 @@
                             <strong>Objectif :</strong> Vérifier la faisabilité de communication série fiable pour le transfert de données à distance.
                         </div>
                     </div>
+                    <button class="btn-detail">En savoir plus →</button>
+                </div>
 
+                <!-- scada-rs -->
+                <div class="project-card" data-category="scada cybersec" onclick="openProject('scadars')">
+                    <div class="project-content">
+                        <h3 class="project-title">scada-rs</h3>
+                        <p class="project-desc">Backend SCADA en Rust simulant un environnement industriel via Modbus TCP, avec démonstration de 3 attaques de cybersécurité OT réelles.</p>
+                        <div class="project-tags">
+                            <span class="tag">Rust</span>
+                            <span class="tag">Modbus TCP</span>
+                            <span class="tag">Tokio</span>
+                            <span class="tag">WebSocket</span>
+                            <span class="tag">Cybersécurité OT</span>
+                        </div>
+                        <div class="project-objective">
+                            <strong>Objectif :</strong> Implémenter un protocole industriel bas niveau et explorer des vulnérabilités OT réelles dans un environnement contrôlé.
+                        </div>
+                    </div>
                     <button class="btn-detail">En savoir plus →</button>
                 </div>
 
@@ -234,6 +527,7 @@
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="section" id="contact">
         <div class="container">
             <h2 class="section-title">Restons en contact</h2>
@@ -242,7 +536,7 @@
                     Vous avez un projet ou souhaitez simplement échanger ? N'hésitez pas à me contacter !
                 </p>
                 <div class="hero-cta">
-                    <a href="mailto:adrien.gosset@example.com" class="btn btn-primary">Envoyer un email</a>
+                    <a href="mailto:gossetadrien.pro@gmail.com" class="btn btn-primary">Envoyer un email</a>
                     <a href="https://linkedin.com" target="_blank" class="btn btn-secondary">LinkedIn</a>
                     <a href="https://github.com/gossetadrienpro-arch?tab=repositories" target="_blank" class="btn btn-secondary">GitHub</a>
                 </div>
